@@ -7,9 +7,9 @@ import hashlib
 def get_db_connection():
     try:
         conn = mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password="Smith@shanu",   # your MySQL password
+            host="myprojectdb.eu-west.connect.psdb.cloud",
+            user="abcd1234",
+            password="xyz98765",
             database="client_query_system"
         )
         return conn
