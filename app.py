@@ -7,12 +7,11 @@ import hashlib
 def get_db_connection():
     try:
         conn = mysql.connector.connect(
-    host: mysql.project.internal
-    user: root
-    password: Smith@shanu
-    database: project
-    port: 3306
-    )
+            host="localhost",
+            user="root",
+            password="Smith@shanu",   # your MySQL password
+            database="client_query_system"
+        )
         return conn
     except Exception as e:
         st.error(f"❌ Database connection failed: {e}")
