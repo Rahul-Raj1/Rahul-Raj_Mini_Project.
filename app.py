@@ -1,18 +1,12 @@
 import streamlit as st
-import mysql.connector
+import sqlite3
 from datetime import datetime
 import hashlib
 
 # ---------- DATABASE CONNECTION ----------
 def get_db_connection():
     try:
-        conn = mysql.connector.connect(
-          host="your-cloud-hostname",
-          user="your-cloud-username",
-          password="your-cloud-password",
-          database="your-db-name",
-          ssl_disabled=False
-          )
+        conn = sqlite3.connect("database.db")
         return conn
     except Exception as e:
         st.error(f"❌ Database connection failed: {e}")
