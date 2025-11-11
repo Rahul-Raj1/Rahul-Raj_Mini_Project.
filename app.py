@@ -7,12 +7,11 @@ import hashlib
 def get_db_connection():
     try:
         conn = mysql.connector.connect(
-    host: mysql.railway.internal
+    host: mysql.project.internal
     user: root
     password: Smith@shanu
-    database: railway
+    database: project
     port: 3306
-    ssl_ca="cacert.pem"
     )
         return conn
     except Exception as e:
