@@ -7,10 +7,11 @@ import hashlib
 def get_db_connection():
     try:
         conn = mysql.connector.connect(
-    host="aws.connect.psdb.cloud",
-    user="8qyzpxxxxx",
-    password="pscale_xxxxxx",
-    database="client_query_system",
+    host: mysql.railway.internal
+    user: root
+    password: xxxxxxxxx
+    database: railway
+    port: 3306
     ssl_ca="cacert.pem"
     )
         return conn
