@@ -9,7 +9,7 @@ def get_db_connection():
         conn = mysql.connector.connect(
     host: mysql.railway.internal
     user: root
-    password: xxxxxxxxx
+    password: Smith@shanu
     database: railway
     port: 3306
     ssl_ca="cacert.pem"
