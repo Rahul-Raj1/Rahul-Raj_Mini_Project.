@@ -7,11 +7,12 @@ import hashlib
 def get_db_connection():
     try:
         conn = mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password="Smith@shanu",   # your MySQL password
-            database="client_query_system"
-        )
+    host="aws.connect.psdb.cloud",
+    user="8qyzpxxxxx",
+    password="pscale_xxxxxx",
+    database="client_query_system",
+    ssl_ca="cacert.pem"
+    )
         return conn
     except Exception as e:
         st.error(f"❌ Database connection failed: {e}")
