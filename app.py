@@ -23,7 +23,7 @@ def create_tables():
             name TEXT,
             email TEXT UNIQUE,
             password_hash TEXT,
-            role TEXT CHECK(role IN ('Client','Support'))
+            role TEXT CHECK(role IN ('Client','Admin'))
         )
     """)
 
@@ -63,7 +63,7 @@ st.title("Client Query Management System")
 
 # ---------- SIDEBAR ----------
 menu = st.sidebar.radio("Menu", ["Login", "Register"])
-role = st.sidebar.selectbox("Select Role", ["Client", "Support"])
+role = st.sidebar.selectbox("Select Role", ["Client", "Admin"])
 
 
 # ---------- REGISTER ----------
@@ -143,8 +143,8 @@ if "user" in st.session_state:
                 st.success("✅ Your query has been submitted successfully.")
 
     # ---------- SUPPORT SECTION ----------
-    elif user["role"] == "Support":
-        st.subheader("📋 Support Team Dashboard")
+    elif user["role"] == "Admin":
+        st.subheader("📋 Admin Team Dashboard")
 
         conn = get_db_connection()
         cur = conn.cursor()
